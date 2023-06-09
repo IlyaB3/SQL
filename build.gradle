@@ -15,6 +15,10 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    implementation 'com.github.javafaker:javafaker:1.0.2'
+    implementation 'commons-dbutils:commons-dbutils:1.7'
+    implementation 'com.codeborne:selenide:6.12.3'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
     testImplementation 'mysql:mysql-connector-java:8.0.30'
     testImplementation 'com.github.javafaker:javafaker:1.0.2'

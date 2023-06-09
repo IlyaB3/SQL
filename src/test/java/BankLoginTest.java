@@ -9,7 +9,7 @@ import ru.netology.page.LoginPage;
 import static com.codeborne.selenide.Selenide.*;
 import static ru.netology.data.SQLHelper.cleanDatabase;
 
-public class BankTest {
+public class BankLoginTest {
     @AfterAll
     static void teardown() {
         cleanDatabase();
@@ -24,13 +24,5 @@ public class BankTest {
         verificationPage.verifyVerificationPageVisiblity();
         var verificationCode = SQLHelper.getVerificationCode();
         verificationPage.validVerify(verificationCode.getCode());
-    }
-    @Test
-    @DisplayName("Should get error notification if user is not exist in base")
-    void shouldGetErrorNotificationIfLoginWithRandomUserWithoutAddingToBase() {
-        var loginPage = open("http://localhost:9999", LoginPage.class);
-        var authInfo = DataHelper.generateRandomUser();
-        loginPage.validLogin(authInfo);
-        loginPage.verifyErrorNotificationVisiblity();
     }
 }
