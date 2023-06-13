@@ -1,5 +1,6 @@
 package ru.netology.page;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -23,7 +24,7 @@ public class VerificationPage {
 
     public DashboardPage validVerify(String verificationCode) {
         verify(verificationCode);
-        return page(DashboardPage.class);
+        return Selenide.page(DashboardPage.class);
     }
 
     public void verify(String verificationCode) {
